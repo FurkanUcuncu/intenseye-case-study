@@ -1,0 +1,27 @@
+.container{
+    margin: auto;
+    max-width: 1440px;
+    padding: 20px;
+}
+
+.searchContainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.tableWrapper{
+    background-color: rgb(204 204 204 / 70%);
+    border-radius: 0.5em;
+    color: #000;
+}
+
+@media(width <= 650px){
+    .searchContainer{
+        flex-direction: column-reverse;
+        gap: 0.7rem;
+        margin: 0.7rem 0;
+    }
+}

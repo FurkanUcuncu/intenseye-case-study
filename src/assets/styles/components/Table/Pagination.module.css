@@ -1,0 +1,37 @@
+.pagination{
+    display: flex;
+    gap: 0.2rem;
+    margin-top: 1rem;
+
+    .paginationButton{
+        background: #fff;
+        color: #888;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .paginationButton.activePage{
+        background: #36304a;
+        color: #fff;
+    }
+
+    .paginationButton:disabled{
+        opacity: 0.2;
+        cursor: not-allowed;
+    }
+}
+
+@media(width <= 650px){
+    .pagination{
+        margin-top: 0.7rem;
+
+        .paginationButton{
+            font-size: 0.6rem;
+            padding: 0.3rem 0.5rem;
+        }
+    }
+}

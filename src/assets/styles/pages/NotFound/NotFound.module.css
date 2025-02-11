@@ -1,0 +1,26 @@
+.notFoundContainer {
+    width: 100%;
+    height: 20vh;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    
+    .notFoundText{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .goDashboardButton{
+        background: #36304a;
+        color: #fff;
+        border: 1px solid #36304a;
+        margin-top: 30px;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        padding: 1rem;
+        width: 180px;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}

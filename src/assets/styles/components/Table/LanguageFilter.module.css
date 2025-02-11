@@ -1,0 +1,45 @@
+.languageFilter{
+    display: flex;
+    align-items: center;
+
+    .searchLabel{
+        padding: 0.5rem;
+        border: 1px solid #f5f5f5;
+        background: #fff;
+        cursor: pointer;
+
+        &.activeLabel{
+            background: #36304a;
+            color: #fff;
+            border-color: #36304a;
+        }
+
+        &:first-of-type{
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-right: none;
+        }
+
+        &:last-of-type{
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-left: none;
+        }
+
+        input{
+            display: none;
+        }
+    }
+
+    @media(width <= 650px){
+        .searchLabel{
+            font-size: 0.7em;
+            padding: 0.2rem 0.3rem;
+        }
+    }
+}
+
+.searchLabel.labelDisabled{
+    cursor: not-allowed;
+    opacity: 0.2;
+}

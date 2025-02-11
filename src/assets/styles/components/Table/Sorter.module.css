@@ -1,0 +1,26 @@
+.sorterWrapper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    
+    .sorterContainer {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        align-items: center;
+        justify-content: center;
+
+        .ascSorter{
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #fff;
+        }
+
+        .descSorter{
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #fff;
+        }
+    }
+}
