@@ -23,7 +23,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "types": ["vitest", "vitest/globals"]
   },
-  "include": ["src"]
+  "include": ["src", "vite.config.ts"]
 }

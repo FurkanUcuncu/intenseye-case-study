@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import TableBody from '../../../components/Table/TableBody';
-import { IRepo } from '../../../helpers/types';
+import { IRepository } from '../../../helpers/types';
 import {AxiosError, InternalAxiosRequestConfig} from 'axios';
 
 describe('TableBody Component', () => {
@@ -39,24 +39,24 @@ describe('TableBody Component', () => {
     });
 
     it('renders a list of repositories correctly', () => {
-        const mockRepos: IRepo[] = [
+        const mockRepos: IRepository[] = [
             {
-                id: '1',
+                id: 1,
+                name: 'Test Repo 1',
                 owner: { login: 'user1' },
                 description: 'Repository 1',
                 stargazers_count: 44,
                 forks: 50,
-                updated_at: new Date(),
-                total_pages: 2
+                updated_at: '2024-02-09T12:00:00Z'
             },
             {
-                id: '2',
+                id: 2,
+                name: 'test',
                 owner: { login: 'user2' },
                 description: 'Repository 2',
                 stargazers_count: 200,
                 forks: 33,
-                updated_at: new Date('2024-02-09T12:00:00Z'),
-                total_pages: 2
+                updated_at: '2024-03-09T12:00:00Z'
             },
         ];
 
