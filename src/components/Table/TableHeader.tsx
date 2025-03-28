@@ -15,6 +15,7 @@ import {TableHeaderProps} from '../../helpers/types';
  * @returns {JSX.Element} The header row of the table with sorting controls for the columns.
  */
 const TableHeader = ({ onSortChange, sort }: TableHeaderProps): React.JSX.Element => {
+    console.log('rendering table header');
     return (
         <thead>
             <tr className={tableStyles.tRow}>

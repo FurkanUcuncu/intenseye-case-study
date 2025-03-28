@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import loaderStyles from '../../assets/styles/components/Loader/Loader.module.css';
+import loaderStyles from '@styles/components/Loader/Loader.module.css';
 import {LoaderProps} from '../../helpers/types.ts';
 import {FILL_COLORS} from '../../helpers/constant.ts';
 

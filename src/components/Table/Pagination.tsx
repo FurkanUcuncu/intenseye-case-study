@@ -2,31 +2,36 @@ import React from 'react';
 import paginationStyles from '../../assets/styles/components/Table/Pagination.module.css';
 import clsx from 'clsx';
 import {PaginationProps} from '../../helpers/types.ts';
+import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall.ts';
+import {setCurrentPage} from '../../store/query/querySlice.ts';
 
 /**
  * Pagination component that allows navigating through pages with next, previous, and page number buttons.
  * It supports dynamic page numbers with jump page button
  *
  * @param {Object} props - Component props.
- * @param {number} props.currentPage - The current active page.
  * @param {number} props.totalPages - Total number of pages available.
  * @param {boolean} props.isFetching - Loading state for disabling buttons.
- * @param {Function} props.onPageChange - Callback when page changes.
  * @param {number} [props.range=2] - Number of pages to show before jumpPage (default is 2).
  * @param {number} [props.jumpSize=5] - Number of pages to jump when clicking jumpPage button (default is 5).
  *
  * @returns {React.JSX.Element} The Pagination component.
  */
-const Pagination = ({ 
-    currentPage, 
+const Pagination = ({
     totalPages, 
-    isFetching, 
-    onPageChange,
+    isFetching,
     range = 2, // Default to 2 pages before showing jumpPage button
     jumpSize = 5, // Jump by 5 pages when clicking '...'
 }: PaginationProps): React.JSX.Element | null => {
+    const dispatch = useAppDispatch();
+    const {currentPage} = useAppSelector(state => state?.query);
+    console.log('rendering pagination');
     if (totalPages <= 1) return null; // Hide pagination if only 1 page
 
+    const onPageChange = (currentPage: number) => {
+        dispatch(setCurrentPage(currentPage));
+    }
+    
     const getPageNumbers = () => {
         const pages: (number | '...')[] = [];
 

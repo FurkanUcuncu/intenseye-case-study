@@ -1,20 +1,26 @@
 import React from 'react';
-import languageFilterStyles from '../../assets/styles/components/Table/LanguageFilter.module.css';
+import languageFilterStyles from '@styles/components/Table/LanguageFilter.module.css';
 import clsx from 'clsx';
 import { languages } from '../../helpers/constant';
+import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall.ts';
+import {setLanguage} from '../../store/query/querySlice.ts';
 import {LanguageFilterProps} from '../../helpers/types.ts';
 
 /**
  * A filter component that allows selecting a language from a list of radio buttons.
  *
  * @param {Object} props - The selected language.
- * @param {string} props.selectedLanguage The selected language.
  * @param {boolean} props.isFetching Loading state for disabling inputs.
- * @param {function} props.onLanguageChange Callback when language is changed.
  *
  * @returns {React.JSX.Element} The rendered LanguageFilter component.
  */
-const LanguageFilter = ({ selectedLanguage, isFetching, onLanguageChange }: LanguageFilterProps): React.JSX.Element => {
+const LanguageFilter = ({isFetching}: LanguageFilterProps): React.JSX.Element => {
+    console.log('rendering language filter');
+    const dispatch = useAppDispatch();
+    const {language : selectedLanguage} = useAppSelector(state => state?.query);
+    const onLanguageChange = (lang: string) => {
+        dispatch(setLanguage(lang));
+    }
     return (
         <div className={languageFilterStyles.languageFilter}>
             {languages.map((lang) => (

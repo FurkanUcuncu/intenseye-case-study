@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "baseUrl": "./src",
     "paths": {
-      "@assets/*": ["src/assets/*"]
+      "@styles/*": ["src/assets/styles/*"]
     }
   },
   "exclude": ["**/*.test.*", "**/__mocks__/*", "**/__tests__/*"]

@@ -15,6 +15,7 @@ import {AxiosError} from 'axios';
  * @returns {JSX.Element} The table rows displaying repository data, or loading/error messages.
  */
 const TableBody = ({ isLoading, error, repos }: TableBodyProps): React.JSX.Element => {
+    console.log('rendering table body');
     if (isLoading) {
         return (
             <tr>

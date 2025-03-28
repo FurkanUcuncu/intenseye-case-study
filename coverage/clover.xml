@@ -115,7 +115,7 @@
         <line num="9" count="13" type="stmt"/>
         <line num="12" count="26" type="stmt"/>
       </file>
-      <file name="UseLocalStorage.tsx" path="/Users/pentra/Desktop/Training/intenseye-case-study/src/hooks/UseLocalStorage.tsx">
+      <file name="LocalStorageHelper.ts" path="/Users/pentra/Desktop/Training/intenseye-case-study/src/hooks/LocalStorageHelper.ts">
         <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="5" count="14" type="stmt"/>
         <line num="6" count="14" type="cond" truecount="2" falsecount="0"/>

@@ -39,23 +39,17 @@ export interface SorterProps {
 }
 
 export interface PaginationProps {
-    currentPage: number;
     totalPages: number;
     isFetching: boolean;
-    onPageChange: (newPage: number) => void;
     range?: number; // Number of pages between current and jump Page
     jumpSize?: number;
 }
 
 export interface LanguageFilterProps {
-    selectedLanguage: string;
     isFetching: boolean;
-    onLanguageChange: (lang: string) => void;
 }
 
 export interface SearchInputProps {
-    query: string;
-    onQueryChange: (value: string) => void;
     isFetching: boolean;
 }
 

@@ -28,4 +28,10 @@ export default defineConfig({
             },
         },
     },
+    resolve: {
+        alias: {
+            '@' : '/src',
+            '@styles' : '/src/assets/styles',
+        }
+    }
 });

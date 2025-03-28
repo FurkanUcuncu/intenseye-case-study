@@ -281,7 +281,7 @@ import LanguageFilter from '../../components/Table/LanguageFilter.tsx';
 import TableHeader from '../../components/Table/TableHeader.tsx';
 import TableBody from '../../components/Table/TableBody.tsx';
 import Pagination from '../../components/Table/Pagination.tsx';
-import useLocalStorage from '../../hooks/UseLocalStorage.tsx';
+import localStorageHelper from '../../hooks/LocalStorageHelper.ts';
 &nbsp;
 /**
  * Dashboard component that displays repositories with sorting, filtering, and pagination options.
@@ -293,7 +293,7 @@ const Dashboard: React.FC = () =&gt; {
      * Local storage hook for storing user choices like search query, sorting, page, and language.
      * Default value is an object with keys: query, sort, page, and language.
      */
-    const [storedValue, setStoredValue] = useLocalStorage('userChoices', {query: '', sort: {sort: '', direction: 'asc'}, page: 1, language: 'JavaScript'})
+    const [storedValue, setStoredValue] = localStorageHelper('userChoices', {query: '', sort: {sort: '', direction: 'asc'}, page: 1, language: 'JavaScript'})
 &nbsp;
     // State hooks for handling user input
     const [query, setQuery] = useState&lt;string&gt;(storedValue.query);

@@ -1,19 +1,25 @@
 import React from 'react';
 import searchInputStyles from '../../assets/styles/components/SearchInput/SearchInput.module.css';
 import {SearchInputProps} from '../../helpers/types.ts';
+import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall.ts';
+import {setQuery} from '../../store/query/querySlice.ts';
 
 /**
  * SearchInput component renders an input field for searching repositories.
  * It allows users to type in a query and triggers a change event to update the query state.
  *
  * @param {Object} props - Component props.
- * @param {string} props.query - The current search query.
- * @param {Function} props.onQueryChange - Callback function to handle changes to the search query. It accepts the updated query as a string.
  * @param {boolean} props.isFetching - Flag to indicate whether data is being fetched. If true, the input is disabled.
  *
  * @returns {JSX.Element} The search input field with a placeholder and dynamic state handling.
  */
-const SearchInput = ({ isFetching, query, onQueryChange }: SearchInputProps): React.JSX.Element => {
+const SearchInput = ({ isFetching }: SearchInputProps): React.JSX.Element => {
+    console.log('rendering search input');
+    const dispatch = useAppDispatch();
+    const {query} = useAppSelector(state => state?.query);
+    const onQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setQuery(event.target.value));
+    }
     return (
         <input
             data-testid="search-input"
@@ -22,7 +28,7 @@ const SearchInput = ({ isFetching, query, onQueryChange }: SearchInputProps): Re
             type="text"
             placeholder="Search repositories..."
             value={query}
-            onChange={(event) => onQueryChange(event.target.value)}
+            onChange={onQueryChange}
         />
     );
 };
