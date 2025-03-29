@@ -1,7 +1,4 @@
 import React, {useCallback} from 'react';
-import {keepPreviousData, useQuery, useQueryClient} from '@tanstack/react-query';
-import { useDebounce } from '@hooks/UseDebounce';
-import { fetchRepositories } from '@services/RepositoryService';
 import { ISort } from '@helpers/types';
 import dashboardStyles from '@styles/pages/Dashboard/Dashboard.module.css';
 import tableStyles from '@styles/components/Table/Table.module.css';
@@ -13,6 +10,7 @@ import Pagination from '@components/Table/Pagination';
 import {RootState} from '@store/store';
 import {useAppDispatch, useAppSelector} from '@hooks/ReduxCall';
 import {setSort} from '@store/query/querySlice';
+import {useGetRepositoriesQuery} from '@store/services/repositoryService';
 
 /**
  * Dashboard component that displays repositories with sorting, filtering, and pagination options.
@@ -20,22 +18,25 @@ import {setSort} from '@store/query/querySlice';
  * @returns JSX element rendering the dashboard UI.
  */
 const Dashboard: React.FC = () => {
-    const queryClient = useQueryClient();
     const dispatch = useAppDispatch();
-
     // Selectors from Redux store
     const {query, sort, currentPage, language} = useAppSelector((state: RootState) => state?.query);
-    /**
-     * Local storage hook for storing user choices like search query, sorting, page, and language.
-     * Default value is an object with keys: query, sort, page, and language.
-     */
 
     /**
-     * Debounced version of the query state to avoid multiple API calls during typing.
-     * @param query - The search term inputted by the user.
+     * React Query hook to fetch repository data from the API based on the current query, language, sorting, and page.
      */
-    const debouncedQuery = useDebounce(query, 500);
-
+    const { data, isLoading, isFetching, error, refetch } = useGetRepositoriesQuery(
+        { query, sort, currentPage, language },
+        {
+            selectFromResult: ({ data, isLoading, isFetching, error }) => ({
+                data,
+                isLoading,
+                isFetching,
+                error,
+            }),
+        }
+    );
+    
     /**
      * Handle sorting when user clicks on sort buttons.
      * This updates the sort state
@@ -46,19 +47,8 @@ const Dashboard: React.FC = () => {
             sort: sortType,
             direction: sort.direction === 'asc' ? 'desc' : 'asc',
         } as ISort));
-        queryClient.invalidateQueries({ queryKey: ['repos'] });
-    }, [dispatch, sort, queryClient]);
-
-    /**
-     * React Query hook to fetch repository data from the API based on the current query, language, sorting, and page.
-     */
-    const { data, isLoading, isFetching, error } = useQuery({
-        queryKey: ['repos', debouncedQuery, language, sort.sort, sort.direction, currentPage],
-        queryFn: () => fetchRepositories(query.trim(), sort, currentPage, language),
-        placeholderData: keepPreviousData,
-        refetchOnMount: false,
-        refetchOnWindowFocus: false
-    });
+        refetch();
+    }, [dispatch, sort]);
     
     /**
      * Calculates the total number of pages based on the total count of repositories.
@@ -70,9 +60,7 @@ const Dashboard: React.FC = () => {
         <div data-testid='dashboard-container' className={dashboardStyles.container}>
             <div className={dashboardStyles.searchContainer}>
                 <SearchInput isFetching={isFetching} />
-                <LanguageFilter
-                    isFetching={isFetching}
-                />
+                <LanguageFilter isFetching={isFetching} />
             </div>
             <div className={dashboardStyles.tableWrapper}>
                 <table className={tableStyles.table}>
