@@ -1,6 +1,6 @@
-import sorterStyles from '../../assets/styles/components/Table/Sorter.module.css'
+import sorterStyles from '@styles/components/Table/Sorter.module.css'
 import React from 'react';
-import {SorterProps} from '../../helpers/types.ts';
+import {SorterProps} from '@helpers/types';
 
 /**
  * Sorter component that displays a sorting indicator based on the current sort direction.

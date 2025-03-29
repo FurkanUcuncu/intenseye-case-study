@@ -1,10 +1,10 @@
 import React from 'react';
 import languageFilterStyles from '@styles/components/Table/LanguageFilter.module.css';
 import clsx from 'clsx';
-import { languages } from '../../helpers/constant';
-import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall.ts';
-import {setLanguage} from '../../store/query/querySlice.ts';
-import {LanguageFilterProps} from '../../helpers/types.ts';
+import { languages } from '@helpers/constant';
+import {LanguageFilterProps} from '@helpers/types';
+import {useAppDispatch, useAppSelector} from '@hooks/ReduxCall';
+import {setLanguage} from '@store/query/querySlice';
 
 /**
  * A filter component that allows selecting a language from a list of radio buttons.

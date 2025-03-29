@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {IApiResponse, ISort} from '../helpers/types.ts';
+import {IApiResponse, ISort} from '@helpers/types';
 
 /**
  * Fetches repositories from GitHub API based on query, language, and sorting options.

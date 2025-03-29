@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchRepositories } from '../../services/RepositoryService';
-import { RootState } from '../store.ts';
-import {IRepository, ISort} from '../../helpers/types';
+import { fetchRepositories } from '@services/RepositoryService';
+import { RootState } from '../store';
+import {IRepository, ISort} from '@helpers/types';
 
 interface RepositoryState {
     items: IRepository[];

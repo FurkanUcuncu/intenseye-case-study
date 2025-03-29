@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { vi } from 'vitest';
-import { fetchRepositories } from '../../services/RepositoryService.ts';
-import { ISort } from '../../helpers/types.ts';
+import { fetchRepositories } from '@services/RepositoryService.ts';
+import { ISort } from '@helpers/types.ts';
 
 // Mocking axios
 vi.mock('axios');

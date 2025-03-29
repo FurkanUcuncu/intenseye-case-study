@@ -1,8 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import loaderStyles from '@styles/components/Loader/Loader.module.css';
-import {LoaderProps} from '../../helpers/types.ts';
-import {FILL_COLORS} from '../../helpers/constant.ts';
+import {LoaderProps} from '@helpers/types';
+import {FILL_COLORS} from '@helpers/constant';
 
 /**
  * Loader component renders a circular spinner to indicate loading state.

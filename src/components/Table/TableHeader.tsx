@@ -1,8 +1,8 @@
 import React from 'react';
-import tableStyles from '../../assets/styles/components/Table/Table.module.css';
-import sorterStyles from '../../assets/styles/components/Table/Sorter.module.css';
-import Sorter from '../../components/Table/Sorter.tsx';
-import {TableHeaderProps} from '../../helpers/types';
+import tableStyles from '@styles/components/Table/Table.module.css';
+import sorterStyles from '@styles/components/Table/Sorter.module.css';
+import Sorter from '@components/Table/Sorter';
+import {TableHeaderProps} from '@helpers/types';
 
 /**
  * TableHeader component renders the table header row with sorting functionality for columns.

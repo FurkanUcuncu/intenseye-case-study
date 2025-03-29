@@ -1,6 +1,6 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-import wrapWithQueryClientProvider from '../../../hooks/renderWithQueryClientProvider.tsx';
-import TableHeader from '../../../components/Table/TableHeader.tsx';
+import wrapWithQueryClientProvider from '@hooks/renderWithQueryClientProvider.tsx';
+import TableHeader from '@components/Table/TableHeader.tsx';
 import {vi} from 'vitest';
 
 describe('TableHeader Component', () => {

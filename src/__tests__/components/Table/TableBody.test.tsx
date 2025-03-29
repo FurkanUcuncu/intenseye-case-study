@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import TableBody from '../../../components/Table/TableBody';
-import { IRepository } from '../../../helpers/types';
+import TableBody from '@components/Table/TableBody';
+import { IRepository } from '@helpers/types';
 import {AxiosError, InternalAxiosRequestConfig} from 'axios';
 
 describe('TableBody Component', () => {

@@ -1,6 +1,6 @@
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
-import Dashboard from './pages/Dashboard/Dashboard.tsx';
-import NotFound from './pages/NotFound/NotFound.tsx';
+import Dashboard from '@pages/Dashboard/Dashboard';
+import NotFound from '@pages/NotFound/NotFound';
 
 /**
  * Main App component that contains routing logic for the application.

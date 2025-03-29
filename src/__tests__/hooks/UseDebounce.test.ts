@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import {useDebounce} from '../../hooks/UseDebounce.tsx';
+import {useDebounce} from '@hooks/UseDebounce.tsx';
 
 vi.useFakeTimers(); // Mock timers
 

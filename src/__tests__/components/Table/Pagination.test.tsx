@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Pagination from '../../../components/Table/Pagination';
+import Pagination from '@components/Table/Pagination';
 
 describe('Pagination Component', () => {
     const onPageChangeMock = vi.fn();

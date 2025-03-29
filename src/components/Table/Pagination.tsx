@@ -1,10 +1,9 @@
 import React from 'react';
-import paginationStyles from '../../assets/styles/components/Table/Pagination.module.css';
+import paginationStyles from '@styles/components/Table/Pagination.module.css';
 import clsx from 'clsx';
-import {PaginationProps} from '../../helpers/types.ts';
-import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall.ts';
-import {setCurrentPage} from '../../store/query/querySlice.ts';
-
+import {PaginationProps} from '@helpers/types';
+import {useAppDispatch, useAppSelector} from '@hooks/ReduxCall';
+import {setCurrentPage} from '@store/query/querySlice';
 /**
  * Pagination component that allows navigating through pages with next, previous, and page number buttons.
  * It supports dynamic page numbers with jump page button

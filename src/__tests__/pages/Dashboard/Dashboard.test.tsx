@@ -1,9 +1,9 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import Dashboard from '../../../pages/Dashboard/Dashboard.tsx';
-import wrapWithQueryClientProvider from '../../../hooks/renderWithQueryClientProvider.tsx';
+import Dashboard from '@pages/Dashboard/Dashboard.tsx';
+import wrapWithQueryClientProvider from '@hooks/renderWithQueryClientProvider.tsx';
 import {useQuery, UseQueryResult} from '@tanstack/react-query';
 import { vi } from 'vitest';
-import {dummyResponse} from '../../../helpers/constant.ts';
+import {dummyResponse} from '@helpers/constant.ts';
 import React from 'react';
 
 vi.mock('@tanstack/react-query', async () => {

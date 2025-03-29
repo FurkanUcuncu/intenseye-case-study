@@ -1,18 +1,18 @@
 import React, {useCallback} from 'react';
 import {keepPreviousData, useQuery, useQueryClient} from '@tanstack/react-query';
-import { useDebounce } from '../../hooks/UseDebounce';
-import { fetchRepositories } from '../../services/RepositoryService';
-import { ISort } from '../../helpers/types';
-import dashboardStyles from '../../assets/styles/pages/Dashboard/Dashboard.module.css';
-import tableStyles from '../../assets/styles/components/Table/Table.module.css';
-import SearchInput from '../../components/SearchInput/SearchInput';
-import LanguageFilter from '../../components/Table/LanguageFilter';
-import TableHeader from '../../components/Table/TableHeader';
-import TableBody from '../../components/Table/TableBody';
-import Pagination from '../../components/Table/Pagination';
-import {RootState} from '../../store/store';
-import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall';
-import {setSort} from '../../store/query/querySlice';
+import { useDebounce } from '@hooks/UseDebounce';
+import { fetchRepositories } from '@services/RepositoryService';
+import { ISort } from '@helpers/types';
+import dashboardStyles from '@styles/pages/Dashboard/Dashboard.module.css';
+import tableStyles from '@styles/components/Table/Table.module.css';
+import SearchInput from '@components/SearchInput/SearchInput';
+import LanguageFilter from '@components/Table/LanguageFilter';
+import TableHeader from '@components/Table/TableHeader';
+import TableBody from '@components/Table/TableBody';
+import Pagination from '@components/Table/Pagination';
+import {RootState} from '@store/store';
+import {useAppDispatch, useAppSelector} from '@hooks/ReduxCall';
+import {setSort} from '@store/query/querySlice';
 
 /**
  * Dashboard component that displays repositories with sorting, filtering, and pagination options.

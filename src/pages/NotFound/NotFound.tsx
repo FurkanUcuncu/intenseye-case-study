@@ -1,6 +1,6 @@
 import React from 'react';
-import {NOT_FOUND_TEXT} from '../../helpers/constant.ts';
-import notFoundStyles from '../../assets/styles/pages/NotFound/NotFound.module.css'
+import {NOT_FOUND_TEXT} from '@helpers/constant';
+import notFoundStyles from '@styles/pages/NotFound/NotFound.module.css'
 import {useNavigate} from 'react-router-dom';
 
 /**

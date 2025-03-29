@@ -1,8 +1,8 @@
 import React from 'react';
-import searchInputStyles from '../../assets/styles/components/SearchInput/SearchInput.module.css';
-import {SearchInputProps} from '../../helpers/types.ts';
-import {useAppDispatch, useAppSelector} from '../../hooks/ReduxCall.ts';
-import {setQuery} from '../../store/query/querySlice.ts';
+import searchInputStyles from '@styles/components/SearchInput/SearchInput.module.css';
+import {SearchInputProps} from '@helpers/types';
+import {useAppDispatch, useAppSelector} from '@hooks/ReduxCall';
+import {setQuery} from '@store/query/querySlice';
 
 /**
  * SearchInput component renders an input field for searching repositories.

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
-import LanguageFilter from '../../../components/Table/LanguageFilter';
+import LanguageFilter from '@components/Table/LanguageFilter';
 
 const mockOnLanguageChange = vi.fn();
 

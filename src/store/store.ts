@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import queryReducer from './query/querySlice.ts';
-import repositoryReducer from './repos/repositorySlice.ts';
+import queryReducer from './query/querySlice';
+import repositoryReducer from './repos/repositorySlice';
 
 export const store = configureStore({
     reducer: {

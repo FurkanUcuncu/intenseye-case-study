@@ -1,6 +1,6 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-import wrapWithQueryClientProvider from '../../../hooks/renderWithQueryClientProvider.tsx';
-import NotFound from '../../../pages/NotFound/NotFound.tsx';
+import wrapWithQueryClientProvider from '@hooks/renderWithQueryClientProvider.tsx';
+import NotFound from '@pages/NotFound/NotFound.tsx';
 
 describe('NotFound Component', () => {
     it('renders notFound page', () => {

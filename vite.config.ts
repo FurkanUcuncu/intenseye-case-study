@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths'
+import { fileURLToPath, URL } from 'url';
 
 export default defineConfig({
     plugins: [
         react(),
+        tsconfigPaths()
     ],
     esbuild: {
         loader: 'tsx',
@@ -31,7 +34,13 @@ export default defineConfig({
     resolve: {
         alias: {
             '@' : '/src',
+            '@helpers': fileURLToPath(new URL('./src/helpers', import.meta.url)),
             '@styles' : '/src/assets/styles',
+            '@components' : '/src/components',
+            '@hooks' : '/src/hooks',    
+            '@store' : '/src/store',
+            '@services' : '/src/services',
+            '@pages' : '/src/pages',
         }
     }
 });

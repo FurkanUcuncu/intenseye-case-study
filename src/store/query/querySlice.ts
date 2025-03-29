@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ISort } from '../../helpers/types';
-import localStorageHelper from '../../helpers/LocalStorageHelper.ts';
+import { ISort } from '@helpers/types';
+import localStorageHelper from '@helpers/LocalStorageHelper';
 
 interface QueryState {
     query: string;

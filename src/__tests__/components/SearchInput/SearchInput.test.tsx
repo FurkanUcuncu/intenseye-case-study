@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
-import SearchInput from '../../../components/SearchInput/SearchInput.tsx';
+import SearchInput from '@components/SearchInput/SearchInput.tsx';
 
 describe('SearchInput Component', () => {
     it('renders correctly with initial props', () => {

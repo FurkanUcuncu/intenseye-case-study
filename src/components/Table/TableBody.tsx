@@ -1,7 +1,7 @@
 import React from 'react';
-import tableStyles from '../../assets/styles/components/Table/Table.module.css';
-import {IRepository, TableBodyProps} from '../../helpers/types';
-import Loader from '../../components/Loader/Loader';
+import tableStyles from '@styles/components/Table/Table.module.css';
+import {IRepository, TableBodyProps} from '@helpers/types';
+import Loader from '@components/Loader/Loader';
 import {AxiosError} from 'axios';
 
 /**
