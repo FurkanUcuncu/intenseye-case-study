@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths'
-import { fileURLToPath, URL } from 'url';
 
 export default defineConfig({
     plugins: [
@@ -34,7 +33,7 @@ export default defineConfig({
     resolve: {
         alias: {
             '@' : '/src',
-            '@helpers': fileURLToPath(new URL('./src/helpers', import.meta.url)),
+            '@helpers': '/src/helpers',
             '@styles' : '/src/assets/styles',
             '@components' : '/src/components',
             '@hooks' : '/src/hooks',    

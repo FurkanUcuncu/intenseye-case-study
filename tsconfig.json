@@ -9,15 +9,15 @@
     "jsx": "react-jsx",
     "types": ["vitest", "vitest/globals", "@testing-library/jest-dom", "jest"],  // Allows using `describe`, `it`, `expect`
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "@helpers/*": ["src/helpers/*"],
-      "@styles/*": ["src/assets/styles/*"],
-      "@components/*": ["src/components/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@store/*": ["src/store/*"],
-      "@services/*": ["src/services/*"],
-      "@pages/*": ["src/pages/*"]
+      "@helpers/*": ["helpers/*"],
+      "@styles/*": ["assets/styles/*"],
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
+      "@store/*": ["store/*"],
+      "@services/*": ["services/*"],
+      "@pages/*": ["pages/*"]
     },
     "preserveSymlinks": true
   },
