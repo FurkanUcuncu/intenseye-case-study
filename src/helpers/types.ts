@@ -1,17 +1,4 @@
-import {FILL_COLORS} from './constant.ts';
-
-export interface IRepo {
-    id: string;
-    owner: {
-        login: string;
-    };
-
-    description: string;
-    stargazers_count: number;
-    forks: number;
-    updated_at: Date;
-    total_pages: number;
-}
+import {FILL_COLORS} from './constant';
 
 export type ISortingKind = 'stars' | 'forks' | 'updated' | '';
 
@@ -41,7 +28,7 @@ export interface SorterProps {
 export interface PaginationProps {
     totalPages: number;
     isFetching: boolean;
-    range?: number; // Number of pages between current and jump Page
+    range?: number;
     jumpSize?: number;
 }
 
@@ -75,4 +62,36 @@ export interface IApiResponse {
     items: IRepository[];
     total_count: number;
     incomplete_results: boolean;
+}
+
+export type IProductSortingKind = 'title' | 'price' | 'rating' | 'stock' | '';
+
+export interface IProductSort {
+    sort: IProductSortingKind;
+    direction: ISortingDirection;
+}
+
+export interface ProductSorterProps {
+    sortColumn: IProductSortingKind;
+    currentSort: IProductSort;
+}
+
+export interface ProductTableHeaderProps {
+    onSortChange: (sort: IProductSortingKind) => void;
+    sort: IProductSort
+}
+
+export interface IProduct {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    rating: number;
+    stock: string;
+}
+
+export interface ProductTableBodyProps {
+    isLoading: boolean;
+    error: unknown;
+    products: IProduct[];
 }

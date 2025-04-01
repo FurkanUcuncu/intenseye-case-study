@@ -16,7 +16,7 @@ import {setQuery} from '@store/query/querySlice';
 const SearchInput = ({ isFetching }: SearchInputProps): React.JSX.Element => {
     console.log('rendering search input');
     const dispatch = useAppDispatch();
-    const {query} = useAppSelector(state => state?.query);
+    const {query} = useAppSelector(state => state?.product);
     const onQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setQuery(event.target.value));
     }

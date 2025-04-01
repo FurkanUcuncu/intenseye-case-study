@@ -1,6 +1,7 @@
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Dashboard from '@pages/Dashboard/Dashboard';
 import NotFound from '@pages/NotFound/NotFound';
+import Product from '@pages/Product/Product';
 
 /**
  * Main App component that contains routing logic for the application.
@@ -12,7 +13,8 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<Product />} />
+                <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="*" element={<NotFound/>} />
             </Routes>
         </Router>
